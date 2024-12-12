@@ -3,6 +3,7 @@ import HomePage from './HomePage'
 import { BrowserRouter, Routes, Route } from 'react-router';
 import DrawerAppBar from './Nav'
 import Test from './Test';
+import FunFact from './FunFact';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/test' element={<Test />} />
+        <Route path='/fun-fact' element={<FunFact />} />
       </Routes>
     </BrowserRouter>
   )

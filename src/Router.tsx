@@ -2,7 +2,6 @@ import HomePage from './HomePage'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import DrawerAppBar from './Nav'
 import Test from './Test';
-import FunFact from './FunFact/FunFact';
 
 
 export default function Router() {

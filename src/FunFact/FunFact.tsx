@@ -4,10 +4,19 @@ import FunFactCard from "./FunFactCard";
 
 const FunFact: React.FC = () => {
     const [funFact, setFunFact] = useState('This is the default fun fact');
-    const [counter, setCounter] = useState(1);
+
     const getNewFunFact = () => {
-        setCounter(counter + 1)
-        setFunFact('This is a new fun fact ' + counter);
+        const index = Math.floor(Math.random() * 10);
+        fetch("https://jsonplaceholder.typicode.com/photos", { mode: "cors" })
+            .then((response) => response.json())
+            .then(responseJson => {
+                if (responseJson[index]) {
+                    setFunFact(responseJson[index].title);
+                } else {
+                    setFunFact("Try again");
+                }
+            })
+            .catch(e => console.log("this is the err: " + e));
     }
 
     return (
@@ -15,7 +24,6 @@ const FunFact: React.FC = () => {
             <FunFactCard text={funFact} />
             <Button onClick={getNewFunFact} variant="contained">Get me a new fun fact</Button >
         </>
-
     )
 }
 

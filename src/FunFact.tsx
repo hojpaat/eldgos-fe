@@ -1,7 +1,13 @@
 import { Box, Button, Card, CardContent, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
 export default function FunFact() {
+    const [funFact, setFunFact] = useState('This is the default fun fact');
+
+    const leadNew = () => {
+        setFunFact('This is a new fun fact');
+    }
+
     return (
         <>
             <Box sx={{ minWidth: 275 }}>
@@ -9,19 +15,19 @@ export default function FunFact() {
                     <React.Fragment>
                         <CardContent>
                             <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
-                            Random Fun Fact
+                                Random Fun Fact
                             </Typography>
                             <br />
                             <Typography variant="body2" gutterBottom>
-                            This is a random Fact about Iceland
-                            <br />
+                                {funFact}
+                                <br />
                             </Typography>
                         </CardContent>
-                </React.Fragment>
+                    </React.Fragment>
                 </Card>
             </Box>
-            <Button variant="contained">Get me a new fun fact</Button>
+            <Button onClick={leadNew} variant="contained">Get me a new fun fact</Button >
         </>
-        
+
     )
 }

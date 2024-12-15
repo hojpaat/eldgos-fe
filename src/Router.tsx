@@ -12,7 +12,6 @@ export default function Router() {
             <Routes>
                 <Route path='/' element={<HomePage />} />
                 <Route path='/test' element={<Test />} />
-                <Route path='/fun-fact' element={<FunFact />} />
             </Routes>
         </BrowserRouter>
     )

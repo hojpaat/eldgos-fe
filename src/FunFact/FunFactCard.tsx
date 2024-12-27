@@ -13,10 +13,8 @@ const FunFactCard: React.FC<FunFactCardProps> = (props: FunFactCardProps): React
                         <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
                             Random Fun Fact
                         </Typography>
-                        <br />
                         <Typography variant="body2" gutterBottom>
                             {props.text}
-                            <br />
                         </Typography>
                     </CardContent>
                 </React.Fragment>

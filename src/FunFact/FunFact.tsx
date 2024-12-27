@@ -16,7 +16,10 @@ const FunFact: React.FC = () => {
                     setFunFact("Try again");
                 }
             })
-            .catch(e => console.log("this is the err: " + e));
+            .catch(e => {
+                console.log("this is the err: " + e);
+                setFunFact("Something went wrong, please try again later.");
+            });
     }
 
     return (
